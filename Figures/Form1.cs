@@ -190,7 +190,6 @@ namespace Figures
 
         bool isMouseDown = false;
         bool isMouseMove = false;
-
         bool figureIsMoving = false;
 
         #region WindowMouse
