@@ -11,9 +11,11 @@ namespace Figures
     abstract class Shape
     {
         static public Color color;
-        static public int radius;
+        static int radius;
         public float x, y;
         public bool is_moving;
+
+        static public event EventHandler RadiusChanged;
 
         static Shape()
         {
@@ -28,5 +30,20 @@ namespace Figures
 
         public abstract void Draw(Graphics g);
 
+        static public int Radius
+        {
+            get
+            {
+                return radius;
+            }
+            set
+            {
+                radius = value;
+                if(RadiusChanged != null)
+                {
+                    RadiusChanged(new object(), new EventArgs());
+                }
+            }
+        }
     }
 }

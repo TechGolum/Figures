@@ -22,9 +22,9 @@ namespace Figures
         {
             Brush b = new SolidBrush(color);
             Point[] p = {
-                    new Point((int)x, (int)y - radius),
-                    new Point((int)x - Convert.ToInt32(radius * Math.Cos(3)), (int)y + Convert.ToInt32(radius * Math.Sin(3))),
-                    new Point((int)x + Convert.ToInt32(radius * Math.Cos(3)), (int)y + Convert.ToInt32(radius * Math.Sin(3)))
+                    new Point((int)x, (int)y - Radius),
+                    new Point((int)x - Convert.ToInt32(Radius * Math.Cos(3)), (int)y + Convert.ToInt32(Radius * Math.Sin(3))),
+                    new Point((int)x + Convert.ToInt32(Radius * Math.Cos(3)), (int)y + Convert.ToInt32(Radius * Math.Sin(3)))
                 };
             g.FillPolygon(b, p);
         }

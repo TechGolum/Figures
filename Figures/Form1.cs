@@ -10,11 +10,13 @@ using System.Windows.Forms;
 
 namespace Figures
 {
+    
     public partial class Window : Form
     {
         public Window()
         {
             InitializeComponent();
+            Shape.RadiusChanged += new EventHandler(RadiusChanged);
         }
 
         static List <Shape> shapes = new List<Shape>();
@@ -134,7 +136,7 @@ namespace Figures
 
         static bool findClickedShape(MouseEventArgs e, Shape s)
         {
-            if (e.X >= s.x - Shape.radius && e.X <= s.x + Shape.radius && e.Y >= s.y - Shape.radius && e.Y <= s.y + Shape.radius) return true;
+            if (e.X >= s.x - Shape.Radius && e.X <= s.x + Shape.Radius && e.Y >= s.y - Shape.Radius && e.Y <= s.y + Shape.Radius) return true;
             return false;
         }
 
@@ -297,7 +299,6 @@ namespace Figures
                 Invalidate();
                 runs = true;
             }
-            
         }
 
         private void Stop_Click(object sender, EventArgs e)
@@ -313,15 +314,26 @@ namespace Figures
             Invalidate();
         }
 
+        Radius radius_window = new Radius();
+
+        private void RadiusToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            radius_window.Show();
+        }
+
         private void Window_Paint(object sender, PaintEventArgs e)
         {
             e.Graphics.Clear(BackColor);
-
             if (shapes.Count() > 2) drawLines(e.Graphics);
             for(int i = 0; i < shapes.Count(); i++)
             {
                 shapes[i].Draw(e.Graphics);
             }
+        }
+
+        public void RadiusChanged(Object sender, EventArgs args)
+        {
+            Refresh();
         }
     }
 }

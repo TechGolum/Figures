@@ -20,7 +20,7 @@ namespace Figures
         public override void Draw(Graphics g)
         {
             Brush b = new SolidBrush(color);
-            g.FillEllipse(b, x - radius, y - radius, radius * 2, radius * 2);
+            g.FillEllipse(b, x - Radius, y - Radius, Radius * 2, Radius * 2);
         }
     }
 }
