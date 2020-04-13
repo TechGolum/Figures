@@ -22,7 +22,16 @@ namespace Figures
             shapes = new List<Shape>();
             type_of_figure = new Triangle();
             Shape.RadiusChanged += new EventHandler(RadiusChanged);
-            MessageBox.Show(Plugins.getClasses()[0].Name);
+            string str = "";
+            try
+            {
+                for (int i = 0; i < Plugins.getClasses().Count; i++)
+                {
+                    for (int j = 0; j < Plugins.getClasses()[i].Length; j++)
+                        str += "Class: " + Plugins.getClasses()[i][j].Name + "; Library: " + Plugins.getLibs()[i] + "\n";
+                }
+            }
+            catch { MessageBox.Show(str); }
         }
 
         static string filename;
