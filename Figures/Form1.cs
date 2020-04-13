@@ -22,6 +22,7 @@ namespace Figures
             shapes = new List<Shape>();
             type_of_figure = new Triangle();
             Shape.RadiusChanged += new EventHandler(RadiusChanged);
+
             string str = "";
             try
             {
