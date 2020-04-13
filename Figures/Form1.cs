@@ -23,16 +23,16 @@ namespace Figures
             type_of_figure = new Triangle();
             Shape.RadiusChanged += new EventHandler(RadiusChanged);
 
-            string str = "";
+            string str1 = "";
             try
             {
                 for (int i = 0; i < Plugins.getClasses().Count; i++)
                 {
                     for (int j = 0; j < Plugins.getClasses()[i].Length; j++)
-                        str += "Class: " + Plugins.getClasses()[i][j].Name + "; Library: " + Plugins.getLibs()[i] + "\n";
+                        str1 += "Class: " + Plugins.getClasses()[i][j].Name + "; Library: " + Plugins.getLibs()[i] + "\n";
                 }
             }
-            catch { MessageBox.Show(str); }
+            catch { MessageBox.Show(str1); }
         }
 
         static string filename;
