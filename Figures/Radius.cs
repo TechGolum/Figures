@@ -19,12 +19,12 @@ namespace Figures
 
         private void Radius_Load(object sender, EventArgs e)
         {
+            raduis_trackbar.Value = Shape.Radius * 5 - 5;
+        }   
 
-        }
-        
         private void Raduis_trackbar_Scroll(object sender, EventArgs e)
         {
-            Shape.Radius = raduis_trackbar.Value * 5 + 5;
+            Shape.Radius = raduis_trackbar.Value / 5 + 1;
         }
     }
 }

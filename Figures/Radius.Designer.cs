@@ -36,11 +36,13 @@
             // 
             this.raduis_trackbar.BackColor = System.Drawing.Color.Maroon;
             this.raduis_trackbar.Location = new System.Drawing.Point(12, 47);
+            this.raduis_trackbar.Maximum = 250;
+            this.raduis_trackbar.Minimum = 50;
             this.raduis_trackbar.Name = "raduis_trackbar";
             this.raduis_trackbar.Size = new System.Drawing.Size(499, 45);
             this.raduis_trackbar.TabIndex = 0;
-            this.raduis_trackbar.TickStyle = System.Windows.Forms.TickStyle.Both;
-            this.raduis_trackbar.Value = 7;
+            this.raduis_trackbar.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.raduis_trackbar.Value = 50;
             this.raduis_trackbar.Scroll += new System.EventHandler(this.Raduis_trackbar_Scroll);
             // 
             // Radius
@@ -64,6 +66,6 @@
 
         #endregion
 
-        private System.Windows.Forms.TrackBar raduis_trackbar;
+        public System.Windows.Forms.TrackBar raduis_trackbar;
     }
 }
